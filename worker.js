@@ -2,7 +2,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Teste da conexão com o banco D1
     if (url.pathname === "/api/test-db") {
       try {
         const result = await env.DB
@@ -15,17 +14,13 @@ export default {
           result
         });
       } catch (error) {
-        return Response.json(
-          {
-            success: false,
-            error: error.message
-          },
-          { status: 500 }
-        );
+        return Response.json({
+          success: false,
+          error: error.message
+        }, { status: 500 });
       }
     }
 
-    // Serve o site normalmente
-    return env.ASSETS.fetch(request);
+    return new Response("Worker funcionando!");
   }
 };
