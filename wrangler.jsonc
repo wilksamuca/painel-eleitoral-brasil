@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "painel-eleitoral-brasil",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-18",
+
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "painel-eleitoral-db",
+      "database_id": "dd002e14-6336-4103-9985-cfe11a051fd1"
+    }
+  ]
+}
